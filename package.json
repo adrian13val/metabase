@@ -302,7 +302,7 @@
     "build-release:cljs": "yarn clean-release:cljs && shadow-cljs release app",
     "build-release:js": "WEBPACK_BUNDLE=production NODE_OPTIONS=--max-old-space-size=8196 webpack --bail",
     "build-shared": "yarn && webpack --config webpack.shared.config.js",
-    "build-static-viz": "yarn && yarn build-release:cljs && WEBPACK_BUNDLE=production webpack --config webpack.static-viz.config.js",
+    "build-static-viz": "yarn build-release:cljs && WEBPACK_BUNDLE=production webpack --config webpack.static-viz.config.js",
     "build-static-viz:watch": "webpack --config webpack.static-viz.config.js --watch",
     "build-static-viz:watch-wait": "yarn wait:cljs; yarn build-static-viz:watch",
     "build-stats": "yarn && webpack --json > stats.json",
