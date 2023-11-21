@@ -29,6 +29,8 @@ const StaticChart = ({ type, options }: StaticChartProps) => {
   const getColor = createColorGetter(options.colors);
   const chartProps = { ...options, getColor };
 
+  console.log("options.rawSeries", JSON.stringify(options.rawSeries));
+
   switch (type) {
     case "categorical/donut":
       return <CategoricalDonutChart {...chartProps} />;

@@ -2,9 +2,10 @@ import type { ComponentStory } from "@storybook/react";
 import { color } from "metabase/lib/colors";
 import { formatStaticValue } from "metabase/static-viz/lib/format";
 import { measureTextWidth } from "metabase/static-viz/lib/text";
-import * as questions from "metabase/static-viz/components/ComboChart/stories-data";
 import type { RenderingContext } from "metabase/visualizations/types";
+
 import { ComboChart } from "./ComboChart";
+import { data } from "./stories-data";
 
 export default {
   title: "static-viz/ComboChart",
@@ -29,14 +30,63 @@ const renderingContext: RenderingContext = {
 
 export const SplitYAxis = Template.bind({});
 SplitYAxis.args = {
-  rawSeries: questions.autoYSplit as any,
+  rawSeries: data.autoYSplit as any,
+  dashcardSettings: {},
+  renderingContext,
+};
+
+export const TrendSingleSeriesLine = Template.bind({});
+TrendSingleSeriesLine.args = {
+  rawSeries: data.trendSingleSeriesLine as any,
+  dashcardSettings: {},
+  renderingContext,
+};
+
+export const TrendMultiSeriesLine = Template.bind({});
+TrendMultiSeriesLine.args = {
+  rawSeries: data.trendMultiSeriesLine as any,
+  dashcardSettings: {},
+  renderingContext,
+};
+
+export const TrendSingleSeriesArea = Template.bind({});
+TrendSingleSeriesArea.args = {
+  rawSeries: data.trendSingleSeriesArea as any,
+  dashcardSettings: {},
+  renderingContext,
+};
+
+export const TrendMultiSeriesArea = Template.bind({});
+TrendMultiSeriesArea.args = {
+  rawSeries: data.trendMultiSeriesArea as any,
+  dashcardSettings: {},
+  renderingContext,
+};
+
+export const TrendMultiSeriesStackedArea = Template.bind({});
+TrendMultiSeriesStackedArea.args = {
+  rawSeries: data.trendMultiSeriesStackedArea as any,
+  dashcardSettings: {},
+  renderingContext,
+};
+
+export const TrendMultiSeriesNormalizedStackedArea = Template.bind({});
+TrendMultiSeriesNormalizedStackedArea.args = {
+  rawSeries: data.trendMultiSeriesNormalizedStackedArea as any,
+  dashcardSettings: {},
+  renderingContext,
+};
+
+export const TrendSingleSeriesBar = Template.bind({});
+TrendSingleSeriesBar.args = {
+  rawSeries: data.trendSingleSeriesBar as any,
   dashcardSettings: {},
   renderingContext,
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  rawSeries: questions.messedUpAxis as any,
+  rawSeries: data.messedUpAxis as any,
   dashcardSettings: {},
   renderingContext,
 };
